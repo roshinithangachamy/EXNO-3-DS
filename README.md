@@ -31,8 +31,93 @@ We use this categorical data encoding technique when the features are nominal(do
 • Yeojohnson method
 
 # CODING AND OUTPUT:
-       # INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
+# 1.  FUNCTION TRANSFORMATION:
+
+```
+ import pandas as pd
+from scipy import stats
+import numpy as np
+df=pd.read_csv("/content/Data_to_Transform.csv")
+df
+```
+![image](https://github.com/user-attachments/assets/43db0450-1a80-4c05-854a-53d9b0cda054)
+
+```
+df.skew()
+```
+![image](https://github.com/user-attachments/assets/eb220df0-7d71-45d3-b8f6-666417a74a05)
+
+```
+df["Highly Positive Skew"]=np.log(df["Highly Positive Skew"])
+df
+```
+![image](https://github.com/user-attachments/assets/014f1c39-2c94-4196-8c4d-b319bf18e273)
+
+```
+df["Moderate Positive Skew"]=np.reciprocal(df["Moderate Positive Skew"])
+df
+```
+![image](https://github.com/user-attachments/assets/d6139ce4-099b-4f0a-88a3-b8e1fd1a48c5)
+
+```
+df["Highly Negative Skew"]=np.sqrt(df["Highly Negative Skew"])
+df
+```
+![image](https://github.com/user-attachments/assets/ca926d56-1b07-4379-9326-5471c215a23a)
+
+```
+df["Highly Positive Skew"]=np.square(df["Highly Positive Skew"])
+df
+```
+![image](https://github.com/user-attachments/assets/09f3be86-1d85-4e3a-aec2-4f039f531f2a)
+
+```
+df.skew( )
+```
+![image](https://github.com/user-attachments/assets/d880e466-bd8a-4df6-b4b2-38d77f2e11ec)
+
+```
+df["Highly Positive Skew_boxcox"],parameter=stats.boxcox(df["Highly Positive Skew"])
+df
+```
+![image](https://github.com/user-attachments/assets/c1808074-7f55-433d-aff4-45a2288e3f00)
+
+```
+df["Moderate Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Moderate Negative Skew"])
+df
+```
+![image](https://github.com/user-attachments/assets/18836dcd-f092-4b4b-96a2-c75fdc586d5a)
+
+# 2. POWER TRANSFORMATION:
+```
+import seaborn as sns
+import statsmodels.api as sm
+import matplotlib.pyplot as plt
+sm.qqplot(df["Moderate Negative Skew"],line='45')
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/79013be1-c65a-44f3-bab6-16333360f978)
+
+```
+sm.qqplot(np.reciprocal(df["Moderate Negative Skew"]),line='45')
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/c4526e2d-c25d-48ca-87d4-6879559177f9)
+
+```
+from sklearn.preprocessing import QuantileTransformer
+qt=QuantileTransformer(output_distribution='normal',n_quantiles=891)
+```
+```
+df["Moderate Negative Skew"]=qt.fit_transform(df[["Moderate Negative Skew"]])
+```
+```
+sm.qqplot(df["Moderate Negative Skew"],line='45')
+```
+![image](https://github.com/user-attachments/assets/47b72e5a-3140-48c2-a575-d1bc2972ce5f)
+
 # RESULT:
-       # INCLUDE YOUR RESULT HERE
+
+Thus Feature Encoding and Transformation process have been done for the given data.
 
        

@@ -3,15 +3,15 @@
 # AIM:
 To read the given data and perform Feature Encoding and Transformation process and save the data to a file.
 
-## ALGORITHM:
+# ALGORITHM:
 
-STEP 1:Read the given Data.
-STEP 2:Clean the Data Set using Data Cleaning Process.
-STEP 3:Apply Feature Encoding for the feature in the data set.
-STEP 4:Apply Feature Transformation for the feature in the data set.
-STEP 5:Save the data to the file.
+1.Read the given Data.
+2.Clean the Data Set using Data Cleaning Process.
+3.Apply Feature Encoding for the feature in the data set.
+4.Apply Feature Transformation for the feature in the data set.
+5.Save the data to the file.
 
-## FEATURE ENCODING:
+# FEATURE ENCODING:
 
 1. Ordinal Encoding
 An ordinal encoding involves mapping each unique label to an integer value. This type of encoding is really only appropriate if there is a known relationship between the categories. This relationship does exist for some of the variables in our dataset, and ideally, this should be harnessed when preparing the data.

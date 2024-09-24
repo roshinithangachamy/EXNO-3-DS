@@ -1,9 +1,9 @@
 ## EXNO-3-DS
 
-# AIM:
+**AIM:**
 To read the given data and perform Feature Encoding and Transformation process and save the data to a file.
 
-# ALGORITHM:
+**ALGORITHM:**
 
 1.Read the given Data.
 2.Clean the Data Set using Data Cleaning Process.
@@ -11,7 +11,7 @@ To read the given data and perform Feature Encoding and Transformation process a
 4.Apply Feature Transformation for the feature in the data set.
 5.Save the data to the file.
 
-# FEATURE ENCODING:
+**FEATURE ENCODING**
 
 1. Ordinal Encoding
 An ordinal encoding involves mapping each unique label to an integer value. This type of encoding is really only appropriate if there is a known relationship between the categories. This relationship does exist for some of the variables in our dataset, and ideally, this should be harnessed when preparing the data.
@@ -22,18 +22,18 @@ Binary encoding converts a category into binary digits. Each binary digit create
 4. One Hot Encoding
 We use this categorical data encoding technique when the features are nominal(do not have any order). In one hot encoding, for each level of a categorical feature, we create a new variable. Each category is mapped with a binary variable containing either 0 or 1. Here, 0 represents the absence, and 1 represents the presence of that category.
 
-## Methods Used for Data Transformation:
-  # 1. FUNCTION TRANSFORMATION
+**Methods Used for Data Transformation:**
+  **1. FUNCTION TRANSFORMATION**
 • Log Transformation
 • Reciprocal Transformation
 • Square Root Transformation
 • Square Transformation
-  # 2. POWER TRANSFORMATION
+  **2. POWER TRANSFORMATION**
 • Boxcox method
 • Yeojohnson method
 
-## CODING AND OUTPUT:
-#  1. FUNCTION TRANSFORMATION:
+**CODING AND OUTPUT:**
+**1. FUNCTION TRANSFORMATION:**
 
 ```
 import pandas as pd
@@ -90,7 +90,7 @@ df
 ```
 ![image](https://github.com/user-attachments/assets/8fcb1473-2b6d-48b6-acac-94324c9f17c5)
 
-# 2. POWER TRANSFORMATION:
+**2. POWER TRANSFORMATION:**
 
 ```
 import seaborn as sns
@@ -121,7 +121,7 @@ sm.qqplot(df["Moderate Negative Skew"],line='45')
 ```
 ![image](https://github.com/user-attachments/assets/19b0074d-511d-48e3-a583-352cc5a5ed52)
 
-## RESULT:
+**RESULT:**
     Thus perform Feature Encoding and Transformation process has been done for the given data. 
 
        

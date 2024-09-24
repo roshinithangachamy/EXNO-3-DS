@@ -33,7 +33,7 @@ We use this categorical data encoding technique when the features are nominal(do
 • Yeojohnson method
 
 # CODING AND OUTPUT:
-**1. FUNCTION TRANSFORMATION:**
+# 1. FUNCTION TRANSFORMATION:
 
 ```
 import pandas as pd
@@ -90,7 +90,7 @@ df
 ```
 ![image](https://github.com/user-attachments/assets/8fcb1473-2b6d-48b6-acac-94324c9f17c5)
 
-**2. POWER TRANSFORMATION:**
+# 2. POWER TRANSFORMATION:
 
 ```
 import seaborn as sns

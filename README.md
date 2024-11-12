@@ -96,8 +96,6 @@ df
 import seaborn as sns
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
-```
-```
 sm.qqplot(df["Moderate Negative Skew"],line='45')
 plt.show()
 ```
@@ -112,11 +110,7 @@ plt.show()
 ```
 from sklearn.preprocessing import QuantileTransformer
 qt=QuantileTransformer(output_distribution='normal',n_quantiles=891)
-```
-```
 df["Moderate Negative Skew"]=qt.fit_transform(df[["Moderate Negative Skew"]])
-```
-```
 sm.qqplot(df["Moderate Negative Skew"],line='45')
 ```
 ![image](https://github.com/user-attachments/assets/19b0074d-511d-48e3-a583-352cc5a5ed52)

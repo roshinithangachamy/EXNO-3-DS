@@ -41,53 +41,37 @@ from scipy import stats
 import numpy as np
 df=pd.read_csv("/content/Data_to_Transform.csv")
 df
-```
-![image](https://github.com/user-attachments/assets/64d12d6f-c5b7-439c-a793-011a28e0b432)
-
-```
 df.skew()
-```
-![image](https://github.com/user-attachments/assets/232929d7-1c40-43ab-a27b-ffeb9c9a8ca3)
-
-```
 df["Highly Positive Skew"]=np.log(df["Highly Positive Skew"])
 df
-```
-![image](https://github.com/user-attachments/assets/726e44a2-15a7-45e4-99f2-7c425a37f7ba)
-
-```
 df["Moderate Positive Skew"]=np.reciprocal(df["Moderate Positive Skew"])
 df
-```
-![image](https://github.com/user-attachments/assets/07e30cab-02cc-4599-81af-b91d6149059c)
-
-```
 df["Highly Negative Skew"]=np.sqrt(df["Highly Negative Skew"])
 df
-```
-![image](https://github.com/user-attachments/assets/0bc63b9d-808a-4fd4-9338-9fa043391cfe)
-
-```
 df["Highly Positive Skew"]=np.square(df["Highly Positive Skew"])
 df
-```
-![image](https://github.com/user-attachments/assets/f5b30942-2183-4c5e-8773-e7e7c3bc7650)
-
-```
 df.skew( )
-```
-![image](https://github.com/user-attachments/assets/7e022ba8-55e8-4f6e-9903-8bf1e763c47e)
-
-```
 df["Highly Positive Skew_boxcox"],parameter=stats.boxcox(df["Highly Positive Skew"])
 df
-```
-![image](https://github.com/user-attachments/assets/1fa3a697-2b5a-468e-a181-341be740da25)
-
-```
 df["Moderate Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Moderate Negative Skew"])
 df
 ```
+![image](https://github.com/user-attachments/assets/64d12d6f-c5b7-439c-a793-011a28e0b432)
+
+![image](https://github.com/user-attachments/assets/232929d7-1c40-43ab-a27b-ffeb9c9a8ca3)
+
+![image](https://github.com/user-attachments/assets/726e44a2-15a7-45e4-99f2-7c425a37f7ba)
+
+![image](https://github.com/user-attachments/assets/07e30cab-02cc-4599-81af-b91d6149059c)
+
+![image](https://github.com/user-attachments/assets/0bc63b9d-808a-4fd4-9338-9fa043391cfe)
+
+![image](https://github.com/user-attachments/assets/f5b30942-2183-4c5e-8773-e7e7c3bc7650)
+
+![image](https://github.com/user-attachments/assets/7e022ba8-55e8-4f6e-9903-8bf1e763c47e)
+
+![image](https://github.com/user-attachments/assets/1fa3a697-2b5a-468e-a181-341be740da25)
+
 ![image](https://github.com/user-attachments/assets/8fcb1473-2b6d-48b6-acac-94324c9f17c5)
 
 # 2. POWER TRANSFORMATION:
@@ -98,21 +82,16 @@ import statsmodels.api as sm
 import matplotlib.pyplot as plt
 sm.qqplot(df["Moderate Negative Skew"],line='45')
 plt.show()
-```
-![image](https://github.com/user-attachments/assets/8aa121f9-9ab5-4f0e-be53-a59732af88df)
-
-```
 sm.qqplot(np.reciprocal(df["Moderate Negative Skew"]),line='45')
-plt.show()
-```
-![image](https://github.com/user-attachments/assets/4f57b40f-edf8-4bac-996a-20ef73574755)
-
-```
-from sklearn.preprocessing import QuantileTransformer
+plt.show()from sklearn.preprocessing import QuantileTransformer
 qt=QuantileTransformer(output_distribution='normal',n_quantiles=891)
 df["Moderate Negative Skew"]=qt.fit_transform(df[["Moderate Negative Skew"]])
 sm.qqplot(df["Moderate Negative Skew"],line='45')
 ```
+![image](https://github.com/user-attachments/assets/8aa121f9-9ab5-4f0e-be53-a59732af88df)
+
+![image](https://github.com/user-attachments/assets/4f57b40f-edf8-4bac-996a-20ef73574755)
+
 ![image](https://github.com/user-attachments/assets/19b0074d-511d-48e3-a583-352cc5a5ed52)
 
 # RESULT:

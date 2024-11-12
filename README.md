@@ -5,11 +5,11 @@ To read the given data and perform Feature Encoding and Transformation process a
 
 # ALGORITHM:
 
-1.Read the given Data.
-2.Clean the Data Set using Data Cleaning Process.
-3.Apply Feature Encoding for the feature in the data set.
-4.Apply Feature Transformation for the feature in the data set.
-5.Save the data to the file.
+1. Read the given Data.
+2. Clean the Data Set using Data Cleaning Process.
+3. Apply Feature Encoding for the feature in the data set.
+4. Apply Feature Transformation for the feature in the data set.
+5. Save the data to the file.
 
 # FEATURE ENCODING
 

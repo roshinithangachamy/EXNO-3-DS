@@ -56,6 +56,7 @@ df
 df["Moderate Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Moderate Negative Skew"])
 df
 ```
+
 ![image](https://github.com/user-attachments/assets/64d12d6f-c5b7-439c-a793-011a28e0b432)
 
 ![image](https://github.com/user-attachments/assets/232929d7-1c40-43ab-a27b-ffeb9c9a8ca3)
@@ -88,6 +89,7 @@ qt=QuantileTransformer(output_distribution='normal',n_quantiles=891)
 df["Moderate Negative Skew"]=qt.fit_transform(df[["Moderate Negative Skew"]])
 sm.qqplot(df["Moderate Negative Skew"],line='45')
 ```
+
 ![image](https://github.com/user-attachments/assets/8aa121f9-9ab5-4f0e-be53-a59732af88df)
 
 ![image](https://github.com/user-attachments/assets/4f57b40f-edf8-4bac-996a-20ef73574755)
@@ -95,6 +97,6 @@ sm.qqplot(df["Moderate Negative Skew"],line='45')
 ![image](https://github.com/user-attachments/assets/19b0074d-511d-48e3-a583-352cc5a5ed52)
 
 # RESULT:
-    Thus perform Feature Encoding and Transformation process has been done for the given data. 
+Thus perform Feature Encoding and Transformation process has been done for the given data. 
 
        
